@@ -21,23 +21,23 @@ function App() {
   useEffect(() => {
     let ProductA = {
       key: "pro1",
-      name: "产品A", 
+      name: "productA", 
     };
 
     let ProductB = {
       key: "pro2",
-      name: "产品B", 
+      name: "productB", 
     };
 
     let Shanghai = {
       key: "dis1",
       name: "Shanghai",
-    }
+    };
 
     let Beijing = {
-      key: "dis1",
+      key: "dis2",
       name: "Beijing",
-    }
+    };
 
     Products.forEach(item => {
       if (item.name === "ProductA") {
@@ -93,8 +93,7 @@ function App() {
           <h1>Display: {display}</h1>
           <button onClick={() => dispatch(changeToProduct())}>product</button>
           <button onClick={() => dispatch(changeToDistrict())}>district</button>
-          <AppCharts />
-          
+          <AppCharts data={display === "product" ? Products : Districts}/>
           <AppTable products={tableProducts} districts={tableDistricts}/>
         </Content>
         <Footer>Footer</Footer>

@@ -13,7 +13,7 @@ export const AppTable = (props) => {
   const dispatch = useDispatch();
 
   return (
-    <div>
+    <div className="app-table">
       <Table dataSource={data} pagination={false}>
         <Column 
           title="Main Body" 
