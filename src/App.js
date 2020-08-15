@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Layout, Menu } from 'antd';
 import 'antd/dist/antd.css';
+
 import { useSelector, useDispatch } from 'react-redux';
 import { changeToDistrict, changeToProduct } from './actions';
 
+import { AppCharts } from './AppCharts';
 import { AppTable } from './AppTable';
 import { Products, Districts } from './Data';
 
@@ -14,17 +16,28 @@ function App() {
   const dispatch = useDispatch();
 
   const [tableProducts, setTableProducts] = useState([]);
+  const [tableDistricts, setTableDistricts] = useState([]);
 
   useEffect(() => {
     let ProductA = {
-      key: '1',
+      key: "pro1",
       name: "产品A", 
     };
 
     let ProductB = {
-      key: '2',
+      key: "pro2",
       name: "产品B", 
     };
+
+    let Shanghai = {
+      key: "dis1",
+      name: "Shanghai",
+    }
+
+    let Beijing = {
+      key: "dis1",
+      name: "Beijing",
+    }
 
     Products.forEach(item => {
       if (item.name === "ProductA") {
@@ -36,13 +49,32 @@ function App() {
       }
     });
 
+    Districts.forEach(item => {
+      if (item.name === "Shanghai") {
+        Shanghai[item.date] = item.ratio;
+      }
+
+      if (item.name === "Beijing") {
+        Beijing[item.date] = item.ratio;
+      }
+    })
+
     setTableProducts([
       {
-        key: '0',
+        key: "pro0",
         name: "产品"
       },
       ProductA,
-      ProductB
+      ProductB,
+    ]);
+
+    setTableDistricts([
+      {
+        key: "dis0",
+        name: "地区"
+      },
+      Shanghai,
+      Beijing
     ]);
   }, []);
 
@@ -61,8 +93,9 @@ function App() {
           <h1>Display: {display}</h1>
           <button onClick={() => dispatch(changeToProduct())}>product</button>
           <button onClick={() => dispatch(changeToDistrict())}>district</button>
+          <AppCharts />
           
-          <AppTable products={tableProducts} districts={Districts}/>
+          <AppTable products={tableProducts} districts={tableDistricts}/>
         </Content>
         <Footer>Footer</Footer>
       </Layout>

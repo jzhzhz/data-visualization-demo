@@ -39,12 +39,12 @@ export const AppTable = (props) => {
             return name;
           }} 
         />
-        <Column title="2019Q1" dataIndex="2019Q1" key="2019Q1" />
-        <Column title="2019Q2" dataIndex="2019Q2" key="2019Q2" />
-        <Column title="2019Q3" dataIndex="2019Q3" key="2019Q3" />
-        <Column title="2019Q4" dataIndex="2019Q4" key="2019Q4" />
-        <Column title="2020Q1" dataIndex="2020Q1" key="2020Q1" />
+        <Column title="2019Q1(%)" dataIndex="2019Q1" key="2019Q1" />
+        <Column title="2019Q2(%)" dataIndex="2019Q2" key="2019Q2" />
+        <Column title="2019Q3(%)" dataIndex="2019Q3" key="2019Q3" />
+        <Column title="2019Q4(%)" dataIndex="2019Q4" key="2019Q4" />
+        <Column title="2020Q1(%)" dataIndex="2020Q1" key="2020Q1" />
       </Table>
     </div>
   );
-}
+};
