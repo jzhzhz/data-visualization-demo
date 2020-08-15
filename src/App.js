@@ -2,8 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Layout, Menu } from 'antd';
 import 'antd/dist/antd.css';
 
-import { useSelector, useDispatch } from 'react-redux';
-import { changeToDistrict, changeToProduct } from './actions';
+import { useSelector } from 'react-redux';
 
 import { AppCharts } from './AppCharts';
 import { AppTable } from './AppTable';
@@ -13,7 +12,6 @@ const { Header, Footer, Content } = Layout;
 
 function App() {
   const display = useSelector(state => state.display);
-  const dispatch = useDispatch();
 
   const [tableProducts, setTableProducts] = useState([]);
   const [tableDistricts, setTableDistricts] = useState([]);
@@ -90,9 +88,6 @@ function App() {
           </Menu>
         </Header>
         <Content style={{ padding: '0 50px' }}>
-          <h1>Display: {display}</h1>
-          <button onClick={() => dispatch(changeToProduct())}>product</button>
-          <button onClick={() => dispatch(changeToDistrict())}>district</button>
           <AppCharts data={display === "product" ? Products : Districts}/>
           <AppTable products={tableProducts} districts={tableDistricts}/>
         </Content>
