@@ -8,8 +8,7 @@ import { changeToDistrict, changeToProduct } from './actions';
 const { Column } = Table;
 
 export const AppTable = (props) => {
-  let data = props.products;
-  data.push({key: "dis0", name: "地区"});
+  let data = props.products.concat(props.districts);
   
   const dispatch = useDispatch();
 
