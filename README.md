@@ -1,5 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+It is a visualization of data in stacked bar charts and line charts with `Ant Design` and `BizCharts`. 
+
 ## Available Scripts
 
 In the project directory, you can run:
