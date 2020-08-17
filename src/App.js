@@ -4,9 +4,9 @@ import 'antd/dist/antd.css';
 
 import { useSelector } from 'react-redux';
 
-import { AppCharts } from './AppCharts';
-import { AppTable } from './AppTable';
-import { Products, Districts } from './Data';
+import { AppCharts } from './components/AppCharts';
+import { AppTable } from './components/AppTable';
+import { Products, Districts } from './data/Data';
 
 const { Header, Footer, Content } = Layout;
 
@@ -17,6 +17,8 @@ function App() {
   const [tableDistricts, setTableDistricts] = useState([]);
 
   useEffect(() => {
+    // data handling for tables display
+    // using brute force, could be improved
     let ProductA = {
       key: "pro1",
       name: "productA", 

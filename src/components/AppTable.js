@@ -3,7 +3,7 @@ import { Table } from 'antd';
 import { BarChartOutlined } from '@ant-design/icons';
 
 import { useDispatch } from 'react-redux';
-import { changeToDistrict, changeToProduct } from './actions';
+import { changeToDistrict, changeToProduct } from '../actions';
 
 const { Column } = Table;
 
@@ -12,6 +12,7 @@ export const AppTable = (props) => {
   
   const dispatch = useDispatch();
 
+  // the titles are rendered separately
   return (
     <div className="app-table">
       <Table dataSource={data} pagination={false}>
