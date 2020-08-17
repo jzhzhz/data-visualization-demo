@@ -7,8 +7,6 @@ import { useSelector } from 'react-redux';
 
 const { Option } = Select;
 
-
-
 export const AppCharts = (props) => {
   const [chartsData, setChartsData] = useState([]);
   const [season, setSeason] = useState("2019Q1");
@@ -25,8 +23,6 @@ export const AppCharts = (props) => {
         },
         {
           state: "实际",
-          "ProductA": 20,
-          "ProductB": 20,
         },
       ];
     }
@@ -40,8 +36,6 @@ export const AppCharts = (props) => {
         },
         {
           state: "实际",
-          "Shanghai": 40,
-          "Beijing": 40,
         },
       ];
     }
