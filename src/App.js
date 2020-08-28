@@ -57,7 +57,7 @@ function App() {
       if (item.name === "Beijing") {
         Beijing[item.date] = item.ratio;
       }
-    })
+    });
 
     // set data for products in the table
     setTableProducts([
