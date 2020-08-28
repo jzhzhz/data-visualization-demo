@@ -8,6 +8,8 @@ import { createStore } from 'redux';
 import allReducer from './reducers';
 import { Provider } from 'react-redux';
 
+// retrieve the state store in the redux
+// later use Provider to wrap App for states provision
 const store = createStore(allReducer);
 
 ReactDOM.render(

@@ -59,6 +59,7 @@ function App() {
       }
     })
 
+    // set data for products in the table
     setTableProducts([
       {
         key: "pro0",
@@ -68,6 +69,7 @@ function App() {
       ProductB,
     ]);
 
+    // set data for products in the table
     setTableDistricts([
       {
         key: "dis0",
@@ -76,7 +78,7 @@ function App() {
       Shanghai,
       Beijing
     ]);
-  }, []);
+  }, []); // set empty dependencies to avoid endless update
 
   return (
     <React.Fragment>

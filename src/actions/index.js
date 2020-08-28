@@ -1,3 +1,4 @@
+// actions for display switch
 export const changeToProduct = (num) => {
   return {
     type: "PRODUCT",
